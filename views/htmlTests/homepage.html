@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="">
+<html lang="en" id="html" class="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -10,31 +10,36 @@
 </head>
 
 <body class="bg-slate-300 dark:bg-slate-600">
-    <div class="">
+
+    <div class="relative p-2">
         <h1>The Blog</h1>
+        <!-- light mode/dark mode toggle -->
+        <label for="bg-toggle" class="absolute bottom-0 right-0 items-center cursor-pointer m-1">
+            <input type="checkbox" value="" id="bg-toggle" class="sr-only peer">
+            <div
+                class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-teal-200">
+            </div>
+        </label>
+        <!-- end light/dark mode toggle -->
     </div>
 
     <!-- Nav Bar -->
-        <div id="nav" class="bg-teal-300 dark:bg-sky-900 flex justify-center">
-            <ul class="flex justify-around">
-                <li class="mr-6">
-                    <a class="text-violet-900 hover:text-violet-500 dark:text-amber-50 dark:hover:text-amber-300"
-                        href="#">Home</a>
-                </li>
-                <li class="mr-6">
-                    <a class="text-violet-900 hover:text-violet-500 dark:text-amber-50 dark:hover:text-amber-300"
-                        href="#">Dashboard</a>
-                </li>
-                <li class="mr-6">
-                    <a class="text-violet-900 hover:text-violet-500 dark:text-amber-50 dark:hover:text-amber-300"
-                        href="#">Login</a>
-                </li>
-                <li class="mr-6">
-                    <a class="text-violet-900 hover:text-violet-500 dark:text-amber-50 dark:hover:text-amber-300"
-                        href="#">Light Mode</a>
-                </li>
-            </ul>
-        </div>
+    <div id="nav" class="bg-teal-200 dark:bg-sky-900 flex justify-center">
+        <ul class="flex justify-around">
+            <li class="mr-6">
+                <a class="text-gray-900 hover:text-gray-600  dark:text-amber-50 dark:hover:text-amber-300 transition-all"
+                    href="#">Home</a>
+            </li>
+            <li class="mr-6">
+                <a class="text-gray-900 hover:text-gray-600  dark:text-amber-50 dark:hover:text-amber-300"
+                    href="#">Dashboard</a>
+            </li>
+            <li class="mr-6">
+                <a class="text-gray-900 hover:text-gray-600  dark:text-amber-50 dark:hover:text-amber-300"
+                    href="#">Login</a>
+            </li>
+        </ul>
+    </div>
     <!-- End Nav Bar -->
 
     <!-- Search Bar -->
@@ -66,10 +71,12 @@
     </form>
     <!-- End Search Bar -->
 
-    <!-- Start blog cards -->
-    <div id="content" class="flex flex-wrap bg-gray-100 dark:bg-gray-900 justify-center pt-2">
+    <!-- Start blog cards Section -->
+    <div id="content" class="flex flex-wrap bg-gray-100 dark:bg-gray-900 justify-center pt-2 pb-10">
+
+        <!-- Singe Card -->
         <div
-            class="max-w-sm rounded overflow-hidden shadow-lg m-5 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-sky-900 hover:scale-110 transition-all">
+            class="max-w-sm rounded overflow-hidden shadow-lg dark:shadow-zinc-900 m-5 bg-gray-200 dark:bg-gray-800 hover:bg-amber-300 dark:hover:bg-sky-900 dark:hover:shadow-none hover:scale-110 transition-all">
             <div class="px-6 py-4">
                 <div class="font-bold text-xl mb-2 dark:text-gray-300">The Coldest Sunset</div>
                 <p class="text-gray-700 dark:text-gray-400 text-base">
@@ -86,46 +93,11 @@
                     29, 2022</span>
             </div>
         </div>
-        <div
-            class="max-w-sm rounded overflow-hidden shadow-lg m-5 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-sky-900 hover:scale-110 transition-all">
-            <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2 dark:text-gray-300">The Coldest Sunset</div>
-                <p class="text-gray-700 dark:text-gray-400 text-base">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et
-                    perferendis eaque, exercitationem praesentium nihil.
-                </p>
-            </div>
-            <div class="px-6 pt-4 pb-2">
-                <span
-                    class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Jackmerius
-                    Tacktheritrix</span>
-                <span
-                    class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Sept
-                    29, 2022</span>
-            </div>
-        </div>
-        <div
-            class="max-w-sm rounded overflow-hidden shadow-lg m-5 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-sky-900 hover:scale-110 transition-all">
+        <!-- End Single Card -->
 
-            <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2 dark:text-gray-300">The Coldest Sunset</div>
-                <p class="text-gray-700 dark:text-gray-400 text-base">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et
-                    perferendis eaque, exercitationem praesentium nihil.
-                </p>
-            </div>
-            <div class="px-6 pt-4 pb-2">
-                <span
-                    class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Donkey
-                    Teeth</span>
-                <span
-                    class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Sept
-                    29, 2022</span>
-            </div>
-        </div>
+        <!-- Singe Card -->
         <div
-            class="max-w-sm rounded overflow-hidden shadow-lg m-5 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-sky-900 hover:scale-110 transition-all">
-
+            class="max-w-sm rounded overflow-hidden shadow-lg dark:shadow-zinc-900 m-5 bg-gray-200 dark:bg-gray-800 hover:bg-amber-300 dark:hover:bg-sky-900 dark:hover:shadow-none hover:scale-110 transition-all">
             <div class="px-6 py-4">
                 <div class="font-bold text-xl mb-2 dark:text-gray-300">The Coldest Sunset</div>
                 <p class="text-gray-700 dark:text-gray-400 text-base">
@@ -135,16 +107,18 @@
             </div>
             <div class="px-6 pt-4 pb-2">
                 <span
-                    class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Dan
-                    Smith</span>
+                    class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Hingle
+                    McCringleberry</span>
                 <span
                     class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Sept
                     29, 2022</span>
             </div>
         </div>
+        <!-- End Single Card -->
+
+        <!-- Singe Card -->
         <div
-            class="max-w-sm rounded overflow-hidden shadow-lg m-5 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-sky-900 hover:scale-110 transition-all">
-
+            class="max-w-sm rounded overflow-hidden shadow-lg dark:shadow-zinc-900 m-5 bg-gray-200 dark:bg-gray-800 hover:bg-amber-300 dark:hover:bg-sky-900 dark:hover:shadow-none hover:scale-110 transition-all">
             <div class="px-6 py-4">
                 <div class="font-bold text-xl mb-2 dark:text-gray-300">The Coldest Sunset</div>
                 <p class="text-gray-700 dark:text-gray-400 text-base">
@@ -154,15 +128,61 @@
             </div>
             <div class="px-6 pt-4 pb-2">
                 <span
-                    class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">The
-                    Artist Formerly Known as Mousecop</span>
+                    class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Hingle
+                    McCringleberry</span>
                 <span
                     class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Sept
                     29, 2022</span>
             </div>
         </div>
-    </div>
+        <!-- End Single Card -->
+
+        <!-- Singe Card -->
+        <div
+            class="max-w-sm rounded overflow-hidden shadow-lg dark:shadow-zinc-900 m-5 bg-gray-200 dark:bg-gray-800 hover:bg-amber-300 dark:hover:bg-sky-900 dark:hover:shadow-none hover:scale-110 transition-all">
+            <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2 dark:text-gray-300">The Coldest Sunset</div>
+                <p class="text-gray-700 dark:text-gray-400 text-base">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et
+                    perferendis eaque, exercitationem praesentium nihil.
+                </p>
+            </div>
+            <div class="px-6 pt-4 pb-2">
+                <span
+                    class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Hingle
+                    McCringleberry</span>
+                <span
+                    class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Sept
+                    29, 2022</span>
+            </div>
+        </div>
+        <!-- End Single Card -->
+
+        <!-- Singe Card -->
+        <div
+            class="max-w-sm rounded overflow-hidden shadow-lg dark:shadow-zinc-900 m-5 bg-gray-200 dark:bg-gray-800 hover:bg-amber-300 dark:hover:bg-sky-900 dark:hover:shadow-none hover:scale-110 transition-all">
+            <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2 dark:text-gray-300">The Coldest Sunset</div>
+                <p class="text-gray-700 dark:text-gray-400 text-base">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et
+                    perferendis eaque, exercitationem praesentium nihil.
+                </p>
+            </div>
+            <div class="px-6 pt-4 pb-2">
+                <span
+                    class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Hingle
+                    McCringleberry</span>
+                <span
+                    class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Sept
+                    29, 2022</span>
+            </div>
+        </div>
+        <!-- End Single Card -->
+       
     <!-- End Blog Cards -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="../../public/js/main.js"></script>
 
 </body>
 
