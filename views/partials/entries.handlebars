@@ -1,106 +1,131 @@
 <div id="content" class="flex flex-wrap bg-gray-100 dark:bg-gray-900 justify-center pt-2 pb-10">
 
-        <!-- Singe Card -->
-        <div
-            class="max-w-sm rounded overflow-hidden shadow-lg dark:shadow-zinc-900 m-5 bg-gray-200 dark:bg-gray-800 hover:bg-amber-300 dark:hover:bg-sky-900 dark:hover:shadow-none hover:scale-110 transition-all">
+    <!-- Singe Card -->
+    {{#each entries as |entry|}}
+    <div class="max-w-sm rounded overflow-hidden shadow-lg dark:shadow-zinc-900 m-5 bg-gray-200 dark:bg-gray-800 hover:bg-amber-300 dark:hover:bg-sky-900 dark:hover:shadow-none hover:scale-110 transition-all"
+        id={{ id }}>
+        <a href="../entry/{{id}}">
             <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2 dark:text-gray-300">The Coldest Sunset</div>
-                <p class="text-gray-700 dark:text-gray-400 text-base">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et
-                    perferendis eaque, exercitationem praesentium nihil.
+                <div class="font-bold text-xl mb-2 dark:text-gray-300">{{title}}</div>
+                <p class="text-gray-700 line-clamp-5 dark:text-gray-400 text-base">
+                    {{ body }}
                 </p>
             </div>
             <div class="px-6 pt-4 pb-2">
                 <span
-                    class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Hingle
-                    McCringleberry</span>
+                    class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{{
+                    user.name }}</span>
                 <span
-                    class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Sept
-                    29, 2022</span>
+                    class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{{
+                    format_date createdAt }}</span>
             </div>
-        </div>
-        <!-- End Single Card -->
+        </a>
+    </div>
+    {{/each}}
+    <!-- End Single Card -->
 
-        <!-- Singe Card -->
-        <div
-            class="max-w-sm rounded overflow-hidden shadow-lg dark:shadow-zinc-900 m-5 bg-gray-200 dark:bg-gray-800 hover:bg-amber-300 dark:hover:bg-sky-900 dark:hover:shadow-none hover:scale-110 transition-all">
-            <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2 dark:text-gray-300">The Coldest Sunset</div>
-                <p class="text-gray-700 dark:text-gray-400 text-base">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et
-                    perferendis eaque, exercitationem praesentium nihil.
-                </p>
-            </div>
-            <div class="px-6 pt-4 pb-2">
-                <span
-                    class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Hingle
-                    McCringleberry</span>
-                <span
-                    class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Sept
-                    29, 2022</span>
-            </div>
+    {{!--
+    <!-- Singe Card -->
+    <div
+        class="max-w-sm rounded overflow-hidden shadow-lg dark:shadow-zinc-900 m-5 bg-gray-200 dark:bg-gray-800 hover:bg-amber-300 dark:hover:bg-sky-900 dark:hover:shadow-none hover:scale-110 transition-all">
+        <div class="px-6 py-4">
+            <div class="font-bold text-xl mb-2 dark:text-gray-300">The Coldest Sunset</div>
+            <p class="text-gray-700 dark:text-gray-400 text-base">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et
+                perferendis eaque, exercitationem praesentium nihil.
+            </p>
         </div>
-        <!-- End Single Card -->
+        <div class="px-6 pt-4 pb-2">
+            <span
+                class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Hingle
+                McCringleberry</span>
+            <span
+                class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Sept
+                29, 2022</span>
+        </div>
+    </div>
+    <!-- End Single Card -->
 
-        <!-- Singe Card -->
-        <div
-            class="max-w-sm rounded overflow-hidden shadow-lg dark:shadow-zinc-900 m-5 bg-gray-200 dark:bg-gray-800 hover:bg-amber-300 dark:hover:bg-sky-900 dark:hover:shadow-none hover:scale-110 transition-all">
-            <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2 dark:text-gray-300">The Coldest Sunset</div>
-                <p class="text-gray-700 dark:text-gray-400 text-base">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et
-                    perferendis eaque, exercitationem praesentium nihil.
-                </p>
-            </div>
-            <div class="px-6 pt-4 pb-2">
-                <span
-                    class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Hingle
-                    McCringleberry</span>
-                <span
-                    class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Sept
-                    29, 2022</span>
-            </div>
+    <!-- Singe Card -->
+    <div
+        class="max-w-sm rounded overflow-hidden shadow-lg dark:shadow-zinc-900 m-5 bg-gray-200 dark:bg-gray-800 hover:bg-amber-300 dark:hover:bg-sky-900 dark:hover:shadow-none hover:scale-110 transition-all">
+        <div class="px-6 py-4">
+            <div class="font-bold text-xl mb-2 dark:text-gray-300">The Coldest Sunset</div>
+            <p class="text-gray-700 dark:text-gray-400 text-base">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et
+                perferendis eaque, exercitationem praesentium nihil.
+            </p>
         </div>
-        <!-- End Single Card -->
+        <div class="px-6 pt-4 pb-2">
+            <span
+                class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Hingle
+                McCringleberry</span>
+            <span
+                class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Sept
+                29, 2022</span>
+        </div>
+    </div>
+    <!-- End Single Card -->
 
-        <!-- Singe Card -->
-        <div
-            class="max-w-sm rounded overflow-hidden shadow-lg dark:shadow-zinc-900 m-5 bg-gray-200 dark:bg-gray-800 hover:bg-amber-300 dark:hover:bg-sky-900 dark:hover:shadow-none hover:scale-110 transition-all">
-            <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2 dark:text-gray-300">The Coldest Sunset</div>
-                <p class="text-gray-700 dark:text-gray-400 text-base">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et
-                    perferendis eaque, exercitationem praesentium nihil.
-                </p>
-            </div>
-            <div class="px-6 pt-4 pb-2">
-                <span
-                    class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Hingle
-                    McCringleberry</span>
-                <span
-                    class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Sept
-                    29, 2022</span>
-            </div>
+    <!-- Singe Card -->
+    <div
+        class="max-w-sm rounded overflow-hidden shadow-lg dark:shadow-zinc-900 m-5 bg-gray-200 dark:bg-gray-800 hover:bg-amber-300 dark:hover:bg-sky-900 dark:hover:shadow-none hover:scale-110 transition-all">
+        <div class="px-6 py-4">
+            <div class="font-bold text-xl mb-2 dark:text-gray-300">The Coldest Sunset</div>
+            <p class="text-gray-700 dark:text-gray-400 text-base">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et
+                perferendis eaque, exercitationem praesentium nihil.
+            </p>
         </div>
-        <!-- End Single Card -->
+        <div class="px-6 pt-4 pb-2">
+            <span
+                class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Hingle
+                McCringleberry</span>
+            <span
+                class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Sept
+                29, 2022</span>
+        </div>
+    </div>
+    <!-- End Single Card -->
 
-        <!-- Singe Card -->
-        <div
-            class="max-w-sm rounded overflow-hidden shadow-lg dark:shadow-zinc-900 m-5 bg-gray-200 dark:bg-gray-800 hover:bg-amber-300 dark:hover:bg-sky-900 dark:hover:shadow-none hover:scale-110 transition-all">
-            <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2 dark:text-gray-300">The Coldest Sunset</div>
-                <p class="text-gray-700 dark:text-gray-400 text-base">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et
-                    perferendis eaque, exercitationem praesentium nihil.
-                </p>
-            </div>
-            <div class="px-6 pt-4 pb-2">
-                <span
-                    class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Hingle
-                    McCringleberry</span>
-                <span
-                    class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Sept
-                    29, 2022</span>
-            </div>
+    <!-- Singe Card -->
+    <div
+        class="max-w-sm rounded overflow-hidden shadow-lg dark:shadow-zinc-900 m-5 bg-gray-200 dark:bg-gray-800 hover:bg-amber-300 dark:hover:bg-sky-900 dark:hover:shadow-none hover:scale-110 transition-all">
+        <div class="px-6 py-4">
+            <div class="font-bold text-xl mb-2 dark:text-gray-300">The Coldest Sunset</div>
+            <p class="text-gray-700 dark:text-gray-400 text-base">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et
+                perferendis eaque, exercitationem praesentium nihil.
+            </p>
         </div>
-        <!-- End Single Card -->
+        <div class="px-6 pt-4 pb-2">
+            <span
+                class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Hingle
+                McCringleberry</span>
+            <span
+                class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Sept
+                29, 2022</span>
+        </div>
+    </div>
+    <!-- End Single Card -->
+
+    <!-- Singe Card -->
+    <div
+        class="max-w-sm rounded overflow-hidden shadow-lg dark:shadow-zinc-900 m-5 bg-gray-200 dark:bg-gray-800 hover:bg-amber-300 dark:hover:bg-sky-900 dark:hover:shadow-none hover:scale-110 transition-all">
+        <div class="px-6 py-4">
+            <div class="font-bold text-xl mb-2 dark:text-gray-300">The Coldest Sunset</div>
+            <p class="text-gray-700 dark:text-gray-400 text-base">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et
+                perferendis eaque, exercitationem praesentium nihil.
+            </p>
+        </div>
+        <div class="px-6 pt-4 pb-2">
+            <span
+                class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Hingle
+                McCringleberry</span>
+            <span
+                class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Sept
+                29, 2022</span>
+        </div>
+    </div>
+    <!-- End Single Card --> --}}
