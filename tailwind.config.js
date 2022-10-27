@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./views/htmlTests/**/*.{html,js}",
-"../views/**/*.{handlebars}"],
+  content: ["./views/**/*.{html,js,handlebars}"],
   theme: {
     extend: {},
     screens: {
@@ -16,3 +15,6 @@ module.exports = {
   ],
   darkMode: 'class',
 }
+
+
+// npx tailwindcss -i ./views/src/input.css -o ./dist/css/output.css --watch
