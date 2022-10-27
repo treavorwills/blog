@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Entry, User, Comment } = require('../../models')
-// const withAuth = require('../utils/auth');
+const withAuth = require('../../utils/auth');
 const { Op } = require('sequelize')
 
 //Render the homepage with postings
@@ -13,8 +13,8 @@ router.get('/', async (req, res) => {
 
     res.render('homepage',
         {
-            entries
-            //     // logged_in: req.session.logged_in
+            entries,
+            logged_in: req.session.logged_in
         }
     );
 });
@@ -30,8 +30,8 @@ router.get('/entry/:id', async (req, res) => {
 
         res.render('singleEntry',
             {
-                ...entry
-                //     // logged_in: req.session.logged_in
+                ...entry,
+                logged_in: req.session.logged_in
             }
         );
     } catch (err) {
@@ -41,10 +41,10 @@ router.get('/entry/:id', async (req, res) => {
 
 //redirect login from withAuth if theyre not logged in 
 router.get('/login', (req, res) => {
-    // if (req.session.logged_in) {
-    //     res.redirect('/profile');
-    //     return;
-    // }
+    if (req.session.logged_in) {
+        res.redirect('/dashboard');
+        return;
+    }
 
     res.render('login');
 });

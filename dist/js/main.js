@@ -1,6 +1,12 @@
+localStorage.setItem('mode', 'dark')
+
 const bgToggle = $('#bg-toggle');
-// const htmlTag = $('#html');
+// let htmlTag = $('#html');
 
 bgToggle.on('click', function () {
-    $('#html').toggleClass('dark');
+    $('#html').toggleClass('dark light');
+    localStorage.setItem('mode', $('#html').attr("class"));
+    console.log($('#html').attr("class"));
+    
 })
+

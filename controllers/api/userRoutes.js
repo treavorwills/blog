@@ -1,0 +1,132 @@
+const router = require('express').Router();
+const xss = require("xss");
+const { User, Entry } = require('../../models');
+
+//Create new user
+router.post('/', async (req, res) => {
+  try {
+    const nameS = req.body.name;
+    const passwordS = req.body.password;
+    const emailS = req.body.email;
+
+    const nameX = xss(nameS, {
+      whiteList: {},
+      stripIgnoreTag: true,
+      stripIgnoreTagBody: ["script"],
+  });
+
+    const passwordX = xss(passwordS, {
+      whiteList: {},
+      stripIgnoreTag: true,
+      stripIgnoreTagBody: ["script"],
+  });
+
+    const emailX = xss(emailS, {
+      whiteList: {},
+      stripIgnoreTag: true,
+      stripIgnoreTagBody: ["script"],
+  });
+
+  
+    const userData = await User.create({
+      name: nameX,
+      password: passwordX,
+      email: emailX,
+    });
+
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+
+      res.status(200).json(userData);
+    });
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+//Existing user login
+router.post('/login', async (req, res) => {
+  try {
+    const userData = await User.findOne({ where: { email: req.body.email } });
+
+    if (!userData) {
+      res
+        .status(400)
+        .json({ message: 'Incorrect email or password, please try again' });
+      return;
+    }
+
+    const validPassword = await userData.checkPassword(req.body.password);
+
+    if (!validPassword) {
+      res
+        .status(400)
+        .json({ message: 'Incorrect email or password, please try again' });
+      return;
+    }
+
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+
+      res.json({ user: userData, message: 'You are now logged in!' });
+    });
+
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+//Logout
+router.post('/logout', (req, res) => {
+  if (req.session.logged_in) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
+});
+
+//View all users
+router.get('/all', async (req, res) => {
+  try {
+    const userData = await User.findAll({
+      attributes: { exclude: ['password'] }
+    });
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+//View a specific user
+router.get('/:id', async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.params.id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Entry }],
+    });
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+//Delete a user
+router.delete('/:id', async (req, res) => {
+  try {
+    const deleteUser = await User.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+    res.status(200).json(deleteUser);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+module.exports = router;
