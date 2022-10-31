@@ -55,8 +55,25 @@ router.get('/signup', (req, res) => {
 });
 
 // dashboard route
-router.get('/dashboard', withAuth, (req,res) => {
-    res.render('dashboard');
-})
+// router.get('/dashboard', withAuth, (req,res) => {
+//     res.render('dashboard');
+// })
+router.get('/dashboard', withAuth, async (req, res) => {
+    const entryData = await Entry.findAll({
+        include: [{ model: User, attributes: ['name'] }],
+        where: {
+            user_id: req.session.user_id,
+        }
+    });
+    const entries = entryData.map((entry) => entry.get({ plain: true }));
+    // console.log(entries);
+
+    res.render('dashboard',
+        {
+            entries,
+            logged_in: req.session.logged_in
+        }
+    );
+});
 
 module.exports = router;

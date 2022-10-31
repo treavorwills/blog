@@ -2,7 +2,7 @@
         <!-- search, create and view past posts -->
         <div id="options" class="col-span-3">
 
-            <!-- individual post -->
+            <!-- buttons -->
             <div id="newAndSave" class="rounded grid grid-cols-2 justify-center bg-gray-100 dark:bg-gray-900 mx-2 my-1">
                 <div class="px-2 py-2 mx-auto">
                     <button id="new"
@@ -13,73 +13,23 @@
                         class="rounded font-semibold bg-teal-700 text-gray-50 dark:bg-sky-900 dark:text-gray-200 p-2 hover:scale-110 transition-all">SAVE</button>
                 </div>
             </div>
-            <!-- end individual post -->
+            <!-- end buttons -->
 
             <!-- individual post -->
+            {{#each entries as |entry|}}
             <div
-                class="rounded flex justify-between bg-gray-200 hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-sky-900 transition-all mx-2 my-1">
+                class="rounded flex justify-between bg-gray-200 hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-sky-900 transition-all mx-2 my-1" id={{id}}>
                 <div class="px-2 py-2 flex flex-col">
-                    <p class="text-gray-900 dark:text-gray-300">The Coldest Sunset</p>
-                    <p class="text-gray-900 dark:text-gray-300">Sept 29, 2022</p>
+                    <p class="text-gray-900 dark:text-gray-300">{{title}}</p>
+                    <p class="text-gray-900 dark:text-gray-300">{{
+                    format_date createdAt }}</p>
                 </div>
                 <div class="px-2 py-2 my-auto">
                     <button id="delete"
                         class="rounded-full border-red-600 font-semibold bg-red-700 text-gray-50 dark:bg-gray-300 dark:text-red-700 px-2 mr-2 hover:scale-110 transition-all">Delete</button>
                 </div>
             </div>
-            <!-- end individual post -->
-
-            <!-- individual post -->
-            <div
-                class="rounded flex justify-between bg-gray-200 hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-sky-900 transition-all mx-2 my-1">
-                <div class="px-2 py-2 flex flex-col">
-                    <p class="text-gray-900 dark:text-gray-300">The Coldest Sunset</p>
-                    <p class="text-gray-900 dark:text-gray-300">Sept 29, 2022</p>
-                </div>
-                <div class="px-2 py-2 my-auto">
-                    <button
-                        class="rounded-full border-red-600 font-semibold bg-red-700 text-gray-50 dark:bg-gray-300 dark:text-red-700 px-2 mr-2 hover:scale-110 transition-all">Delete</button>
-                </div>
-            </div>
-            <!-- end individual post -->
-            <!-- individual post -->
-            <div
-                class="rounded flex justify-between bg-gray-200 hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-sky-900 transition-all mx-2 my-1">
-                <div class="px-2 py-2 flex flex-col">
-                    <p class="text-gray-900 dark:text-gray-300">The Coldest Sunset</p>
-                    <p class="text-gray-900 dark:text-gray-300">Sept 29, 2022</p>
-                </div>
-                <div class="px-2 py-2 my-auto">
-                    <button
-                        class="rounded-full border-red-600 font-semibold bg-red-700 text-gray-50 dark:bg-gray-300 dark:text-red-700 px-2 mr-2 hover:scale-110 transition-all">Delete</button>
-                </div>
-            </div>
-            <!-- end individual post -->
-            <!-- individual post -->
-            <div
-                class="rounded flex justify-between bg-gray-200 hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-sky-900 transition-all mx-2 my-1">
-                <div class="px-2 py-2 flex flex-col">
-                    <p class="text-gray-900 dark:text-gray-300">The Coldest Sunset</p>
-                    <p class="text-gray-900 dark:text-gray-300">Sept 29, 2022</p>
-                </div>
-                <div class="px-2 py-2 my-auto">
-                    <button
-                        class="rounded-full border-red-600 font-semibold bg-red-700 text-gray-50 dark:bg-gray-300 dark:text-red-700 px-2 mr-2 hover:scale-110 transition-all">Delete</button>
-                </div>
-            </div>
-            <!-- end individual post -->
-            <!-- individual post -->
-            <div
-                class="rounded flex justify-between bg-gray-200 hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-sky-900 transition-all mx-2 my-1">
-                <div class="px-2 py-2 flex flex-col">
-                    <p class="text-gray-900 dark:text-gray-300">The Coldest Sunset</p>
-                    <p class="text-gray-900 dark:text-gray-300">Sept 29, 2022</p>
-                </div>
-                <div class="px-2 py-2 my-auto">
-                    <button
-                        class="rounded-full border-red-600 font-semibold bg-red-700 text-gray-50 dark:bg-gray-300 dark:text-red-700 px-2 mr-2 hover:scale-110 transition-all">Delete</button>
-                </div>
-            </div>
+            {{/each}}
             <!-- end individual post -->
 
             <!-- end search, create and view past posts -->
