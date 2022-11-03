@@ -7,5 +7,5 @@ CMS-Style Blog Site using Handlebars, Express and Node
 
 
 ### Screenshot
-![alt text](../assets/images/screenshot.png)
 
+<img width="1416" alt="Screen Shot 2022-11-03 at 1 03 09 AM" src="https://user-images.githubusercontent.com/25040852/199663761-54203c53-9fec-4d8d-be9b-5970406a5131.png">
