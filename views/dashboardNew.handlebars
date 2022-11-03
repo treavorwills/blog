@@ -1,27 +1,12 @@
-<div id="dashboard" class="bg-gray-100 dark:bg-gray-900 pt-2 grid grid-cols-12 h-full pb-10">
+<div id="dashboard"
+    class="bg-gray-100 dark:bg-gray-900 pt-2 md:grid md:grid-cols-12 h-full pb-10 flex flex-wrap justify-around">
     <!-- search, create and view past posts -->
     <div id="options" class="col-span-3">
-
-        <!-- buttons -->
-        <div id="newAndSave" class="rounded grid grid-cols-2 justify-center bg-gray-100 dark:bg-gray-900 mx-2 my-1">
-            <div class="px-2 py-2 mx-auto">
-                <a href="../dashboard">
-                    <button id="new"
-                        class="rounded font-semibold bg-teal-700 text-gray-50 dark:bg-sky-900 dark:text-gray-200 p-2 hover:scale-110 transition-all">
-                        Clear
-                    </button>
-                </a>
-            </div>
-            <div class="px-2 py-2 mx-auto">
-                <button id="save"
-                    class="rounded font-semibold bg-teal-700 text-gray-50 dark:bg-sky-900 dark:text-gray-200 p-2 hover:scale-110 transition-all" type="submit">SAVE</button>
-            </div>
-        </div>
 
         <!-- individual post -->
         {{#each entries as |entry|}}
         <a href="../dashboard/{{id}}"
-            class="rounded flex justify-between bg-gray-200 hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-sky-900 transition-all mx-2 my-1"
+            class="rounded flex flex-wrap justify-between bg-gray-200 hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-sky-900 transition-all mx-2 my-1"
             id={{id}}>
             <div class="px-2 py-2 flex flex-col">
                 <p class="text-gray-900 dark:text-gray-300">{{title}}</p>
@@ -51,6 +36,24 @@
                     id="entry-body" name="entry-body">
                 </textarea>
             </form>
+        </div>
+
+        <!-- buttons -->
+        <div id="newAndSave"
+            class="rounded flex flex-wrap md:grid md:grid-cols-2 md:justify-center bg-gray-100 dark:bg-gray-900 mx-2 my-1">
+            <div class="px-2 py-2 mx-auto">
+                <a href="../dashboard">
+                    <button id="new"
+                        class="rounded font-semibold bg-teal-700 text-gray-50 dark:bg-sky-900 dark:text-gray-200 p-2 hover:scale-110 transition-all">
+                        Clear
+                    </button>
+                </a>
+            </div>
+            <div class="px-2 py-2 mx-auto">
+                <button id="save"
+                    class="rounded font-semibold bg-teal-700 text-gray-50 dark:bg-sky-900 dark:text-gray-200 p-2 hover:scale-110 transition-all"
+                    type="submit">SAVE</button>
+            </div>
         </div>
 
     </div>

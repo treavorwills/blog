@@ -14,7 +14,7 @@ const newEntryHandler = async (event) => {
         document.location.replace('/dashboard');
         console.log('save button! good');
     } else {
-        alert(response.statusText);
+        alert(`Please enter a title and a body to save the post`);
         console.log('save button! bad');
     }
 };
