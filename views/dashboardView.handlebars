@@ -3,21 +3,17 @@
         <div id="options" class="col-span-3">
 
             <!-- buttons -->
-            <div id="newAndSave" class="rounded grid grid-cols-2 justify-center bg-gray-100 dark:bg-gray-900 mx-2 my-1">
+            <div id="newAndSave" class="rounded grid grid-cols-1 justify-center bg-gray-100 dark:bg-gray-900 mx-2 my-1">
                 <div class="px-2 py-2 mx-auto">
-                    <button id="new"
-                        class="rounded font-semibold bg-teal-700 text-gray-50 dark:bg-sky-900 dark:text-gray-200 p-2 hover:scale-110 transition-all">NEW</button>
-                </div>
-                <div class="px-2 py-2 mx-auto">
-                    <button id="save"
-                        class="rounded font-semibold bg-teal-700 text-gray-50 dark:bg-sky-900 dark:text-gray-200 p-2 hover:scale-110 transition-all">SAVE</button>
+                    <a href="../dashboard" id="new"
+                        class="rounded font-semibold bg-teal-700 text-gray-50 dark:bg-sky-900 dark:text-gray-200 p-2 hover:scale-110 transition-all">NEW</a>
                 </div>
             </div>
             <!-- end buttons -->
 
             <!-- individual post -->
             {{#each entries as |entry|}}
-            <div
+            <a href="../dashboard/{{id}}"
                 class="rounded flex justify-between bg-gray-200 hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-sky-900 transition-all mx-2 my-1" id={{id}}>
                 <div class="px-2 py-2 flex flex-col">
                     <p class="text-gray-900 dark:text-gray-300">{{title}}</p>
@@ -28,7 +24,7 @@
                     <button id="delete"
                         class="rounded-full border-red-600 font-semibold bg-red-700 text-gray-50 dark:bg-gray-300 dark:text-red-700 px-2 mr-2 hover:scale-110 transition-all">Delete</button>
                 </div>
-            </div>
+            </a>
             {{/each}}
             <!-- end individual post -->
 
@@ -39,9 +35,9 @@
         <!-- viewing and editing posts -->
         <div id="field" class="col-span-9">
             <div class="px-6 py-4 flex flex-col">
-                <input class="font-bold text-3xl mb-2 text-gray-900 dark:bg-gray-800 dark:text-gray-300 px-3" placeholder="Title"/>
-                <textarea class="text-gray-900 dark:bg-gray-800 dark:text-gray-400 text-base px-3" placeholder="Body">
-                </textarea>
+                <p class="font-bold text-3xl mb-2 text-gray-900 dark:bg-gray-800 dark:text-gray-300 px-3" >{{singleEntry.title}}</p>
+                <p class="text-gray-900 dark:bg-gray-800 dark:text-gray-400 text-base px-3">{{singleEntry.body}}
+                </p>
             </div>
 
         </div>

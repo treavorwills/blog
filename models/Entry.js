@@ -15,7 +15,7 @@ Entry.init(
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [30],
+                len: [1,30],
             },
         },
         body: {
