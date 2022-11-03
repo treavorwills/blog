@@ -9,7 +9,7 @@
                         class="rounded font-semibold bg-teal-700 text-gray-50 dark:bg-sky-900 dark:text-gray-200 p-2 hover:scale-110 transition-all">NEW</a>
                 </div>
             </div>
-            <!-- end buttons -->
+            <!-- end buttons --> 
 
             <!-- individual post -->
             {{#each entries as |entry|}}
@@ -21,8 +21,8 @@
                     format_date createdAt }}</p>
                 </div>
                 <div class="px-2 py-2 my-auto">
-                    <button id="delete"
-                        class="rounded-full border-red-600 font-semibold bg-red-700 text-gray-50 dark:bg-gray-300 dark:text-red-700 px-2 mr-2 hover:scale-110 transition-all">Delete</button>
+                    <button data-id={{id}}
+                        class="deleteBtn rounded-full border-red-600 font-semibold bg-red-700 text-gray-50 dark:bg-gray-300 dark:text-red-700 px-2 mr-2 hover:scale-110 transition-all">Delete</button>
                 </div>
             </a>
             {{/each}}
@@ -43,3 +43,5 @@
         </div>
         <!-- end viewing and editing posts -->
     </div>
+
+<script src="/js/deleteEntry.js"></script>

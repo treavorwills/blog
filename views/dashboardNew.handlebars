@@ -29,8 +29,8 @@
                     format_date createdAt }}</p>
             </div>
             <div class="px-2 py-2 my-auto">
-                <button id="delete"
-                    class="rounded-full border-red-600 font-semibold bg-red-700 text-gray-50 dark:bg-gray-300 dark:text-red-700 px-2 mr-2 hover:scale-110 transition-all">Delete</button>
+                <button data-id={{id}}
+                    class="deleteBtn rounded-full border-red-600 font-semibold bg-red-700 text-gray-50 dark:bg-gray-300 dark:text-red-700 px-2 mr-2 hover:scale-110 transition-all">Delete</button>
             </div>
         </a>
         {{/each}}
@@ -44,7 +44,6 @@
     <div id="field" class="col-span-9">
         <div class="px-6 py-4 flex flex-col">
             <form id="newEntryForm" class="flex flex-col">
-                <label for="entry-title">Title:</label>
                 <input class="font-bold text-3xl mb-2 text-gray-900 dark:bg-gray-800 dark:text-gray-300 px-3"
                     placeholder="Title" id="entry-title" name="entry-title" />
                 <label for="entry-body"></label>
@@ -59,3 +58,4 @@
 </div>
 
 <script src="/js/addEntry.js"></script>
+<script src="/js/deleteEntry.js"></script>
