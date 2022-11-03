@@ -16,7 +16,10 @@ const signupFormHandler = async (event) => {
         if (response.ok) {
             document.location.replace('/dashboard');
         } else {
-            alert("User already exists")
+            alert(`Try again!
+            You must have a username.
+            Your email must be valid (i.e. something@anything.com)
+            Password must be 8 or more characters`)
         }
     }
 };
