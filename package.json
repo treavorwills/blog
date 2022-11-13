@@ -6,6 +6,9 @@
   "description": "You know what a blog is.",
   "version": "1.0.0",
   "main": "tailwind.config.js",
+  "engines": {
+    "node": "18.x"
+  },
   "dependencies": {
     "@tailwindcss/line-clamp": "^0.4.2",
     "acorn": "^7.4.1",
