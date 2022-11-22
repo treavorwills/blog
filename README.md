@@ -2,9 +2,9 @@
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 ### [ GitHub: treavorwills ]( https://github.com/treavorwills )
 ## Description
-CMS-Style Blog Site using Handlebars, Express and Node
+This Blog was created as an exercise following the MVC paradigm. It is an application built on Sequelize, Handlebars, Express and Node. It incorporates user validation allowing you to log in and create blog posts for yourself. As a visitor you can still view and appreciate blog posts.
 
-## [ The Blog - Deployed Site ]( # )
+## [ The Blog - Deployed Site ]( https://frozen-earth-85548.herokuapp.com/ )
 
 
 ### Screenshot
