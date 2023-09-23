@@ -7,6 +7,13 @@ module.exports = {
         "chalkboard": "url('../img/chalkboard.png')",
         "whiteboard": "url('../img/whiteboard.png')",
       }),
+      fontFamily: {
+        sriracha: ['Sriracha', 'cursive', 'sans'],
+        marker: ['Permanent Marker', 'sans'],
+        reenie: ['Reenie Beanie', 'sans'],
+        nanum: ['Nanum Brush Script', 'sans'],
+        shadow: ['Shadows Into Light', 'sans'],
+      },
     },
     screens: {
       sm: "480px",

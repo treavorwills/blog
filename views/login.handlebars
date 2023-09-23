@@ -1,25 +1,21 @@
-   <div id="content" class="flex flex-wrap bg-gray-100 dark:bg-gray-900 justify-center pt-2 pb-10">
-        <div class="rounded overflow-hidden shadow-lg dark:shadow-zinc-900 m-5 bg-gray-200 dark:bg-gray-800">
-            <form id="login-form" class="flex flex-col">
+   <div id="content" class="flex flex-col items-center pt-5">
+            <form id="login-form" class="p-2 rounded overflow-hidden shadow-lg dark:shadow-zinc-900 bg-gray-200 dark:bg-gray-800 flex flex-col items-center">
                 <!--email input -->
                 <input id="email-login" type="search"
-                    class="form-control px-3 py-1.5 leading-tight text-gray-700 bg-white hover:shadow-lg mx-3 mb-3 mt-3"
+                    class="form-control leading-tight text-gray-700 bg-white hover:shadow-lg m-2 p-2 rounded"
                     placeholder="Email" aria-label="email" aria-describedby="button-addon3">
                 <!-- password input -->
                 <input id="password-login" type="password"
-                    class="form-control px-3 py-1.5 leading-tight text-gray-700 bg-white hover:shadow-lg mx-3 mb-3"
+                    class="form-control leading-tight text-gray-700 bg-white hover:shadow-lg m-2 p-2 rounded"
                     placeholder="Password" aria-label="password" aria-describedby="button-addon3">
                 <!--Login Button -->
                 <button
-                    class="bg-gray-300 rounded-full px-3 py-1 text-md font-semibold text-gray-700 border-black hover:shadow-lg focus:outline-none focus:ring-0 hover:scale-105 transition-all mx-3 mb-3"
+                    class="bg-gray-300 rounded-full px-2 text-md font-semibold text-gray-700 border-black hover:shadow-lg focus:outline-none focus:ring-0 hover:scale-105 transition-all m-2"
                     type="submit" id="button-addon3">Log In</button>
                 <button id="signup-btn"
-                    class="bg-gray-300 rounded-full px-3 py-1 text-md font-semibold text-gray-700 border-black hover:shadow-lg focus:outline-none focus:ring-0 hover:scale-105 transition-all mx-3 mb-3"
+                    class="bg-gray-300 rounded-full px-2 text-md font-semibold text-gray-700 border-black hover:shadow-lg focus:outline-none focus:ring-0 hover:scale-105 transition-all mx-2"
                     type="button" id="button-addon3">Sign Up</button>
             </form>
-        <p>PS: this won't actually email you, so if you forget your username or password, you're hosed.</p>
-
             <script src="./js/login.js"></script>
-        </div>
-        
+        <p>PS: this won't actually email you, so if you forget your username or password, you're hosed.</p>
     </div>

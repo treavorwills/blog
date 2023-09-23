@@ -1,14 +1,11 @@
 {{>search}}
 
 <!-- Start blog post -->
-<div id="content" class="flex justify-center bg-gray-100 dark:bg-gray-900 pt-2 pb-10">
-    <div class="rounded shadow-lg m-5 dark:bg-gray-800 transition-all">
-        <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2 dark:text-gray-300"> {{title}}</div>
+    <div class="rounded shadow-lg m-5 w-11/12 sm:w-2/3 md:w-5/12 bg-opacity-70 bg-zinc-100 dark:bg-zinc-900 dark:bg-opacity-70 transition-all m-auto flex flex-col items-center p-4">
+            <h1 class="font-bold mb-2 text-xl"> {{title}}</h1>
             <p class="text-gray-700 dark:text-gray-400 text-base">
                 {{body}}
             </p>
-        </div>
         <div class="px-6 pt-4 pb-2">
             <span
                 class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{{user.name}}</span>
@@ -16,5 +13,4 @@
                 class="inline-block bg-gray-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{{format_date createdAt}}</span>
         </div>
     </div>
-</div>
 <!-- End Blog Post -->
