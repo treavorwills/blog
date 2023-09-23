@@ -1,12 +1,14 @@
-localStorage.setItem('mode', 'dark')
+$(document).ready(function () {
+    const savedMode = localStorage.getItem('mode');
 
-const bgToggle = $('#bg-toggle');
-// let htmlTag = $('#html');
+    const initialMode = savedMode || 'light';
 
-bgToggle.on('click', function () {
-    $('#html').toggleClass('dark light');
-    localStorage.setItem('mode', $('#html').attr("class"));
-    console.log($('#html').attr("class"));
-    
-})
+    $('#html').addClass(initialMode);
 
+    $('#bg-toggle').on('click', function () {
+        const currentMode = $('#html').hasClass('dark') ? 'light' : 'dark';
+        $('#html').removeClass('dark light').addClass(currentMode);
+
+        localStorage.setItem('mode', currentMode);
+    });
+});
