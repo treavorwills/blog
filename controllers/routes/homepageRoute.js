@@ -73,6 +73,34 @@ router.get('/dashboard', withAuth, async (req, res) => {
     );
 });
 
+//Render the entries that match the search results
+router.get('/search/:id', async (req, res) => {
+    let searchTerm = req.params.id;
+    const entryData = await Entry.findAll({
+        include: [{ model: User, attributes: ['name'] }],
+        where: {
+            [Op.or]: [
+            {title: {[Op.like]: `%${searchTerm}%`}},
+            {body: {[Op.like]: `%${searchTerm}%`}}
+            ]
+        },
+    });
+    const entries = entryData.map((entry) => entry.get({ plain: true }));
+        if (entries.length != 0) {
+            res.render('homepage',
+        {
+            entries,
+            logged_in: req.session.logged_in
+        }
+        )
+     } else {
+            res.render('./partials/noEntries', {
+                entries,
+                logged_in: req.session.logged_in
+            })
+        }
+});
+
 router.get('/dashboard/:id', withAuth, async (req, res) => {
     const entryData = await Entry.findAll({
         include: [{ model: User, attributes: ['name'] }],
